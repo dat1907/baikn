@@ -5,7 +5,7 @@ const products = [
         name: 'iPhone 14 Pro Max',
         price: 29990000,
         oldPrice: 32990000,
-        image: 'https://images.unsplash.com/photo-1675885915738-1d0a102b26b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        image: 'https://mobileworld.com.vn/uploads/news/09_2022/47640-98874-iPhone-14-Pro-Colors-xl.jpg',
         description: 'Màn hình Super Retina XDR 6.7 inch, chip A16 Bionic, camera chính 48MP'
     },
     {
@@ -13,7 +13,7 @@ const products = [
         name: 'Samsung Galaxy S23 Ultra',
         price: 26990000,
         oldPrice: 28990000,
-        image: 'https://images.unsplash.com/photo-1675885915738-1d0a102b26b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        image: 'https://www.sammyfans.com/wp-content/uploads/2023/01/s23-series-leaked-promo-img.jpg',
         description: 'Màn hình Dynamic AMOLED 6.8 inch, chip Snapdragon 8 Gen 2, bút S Pen tích hợp'
     },
     {
@@ -21,7 +21,7 @@ const products = [
         name: 'Xiaomi 13 Pro',
         price: 22990000,
         oldPrice: 24990000,
-        image: 'https://images.unsplash.com/photo-1675885915738-1d0a102b26b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        image: 'https://photo2.tinhte.vn/data/attachment-files/2022/12/6240762_Xiaomi_13_Pro.5.jpg',
         description: 'Màn hình AMOLED 6.73 inch, chip Snapdragon 8 Gen 2, camera Leica'
     },
     {
@@ -29,7 +29,7 @@ const products = [
         name: 'OPPO Find X5 Pro',
         price: 19990000,
         oldPrice: 22990000,
-        image: 'https://images.unsplash.com/photo-1675885915738-1d0a102b26b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        image: 'https://vatvostudio.vn/wp-content/uploads/2022/02/OPPO-Find-X5-Pro-leak-1.jpg',
         description: 'Màn hình LTPO2.0 6.7 inch, chip Snapdragon 8 Gen 1, sạc nhanh 80W'
     },
     {
@@ -37,7 +37,7 @@ const products = [
         name: 'Vivo X90 Pro+',
         price: 28990000,
         oldPrice: 30990000,
-        image: 'https://images.unsplash.com/photo-1675885915738-1d0a102b26b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        image: 'https://specphone.com/web/wp-content/uploads/2023/05/X90-Pro-Pro-Photography-in-Pocket-1.jpg',
         description: 'Màn hình AMOLED 6.78 inch, chip Dimensity 9200, camera chính 50MP'
     },
     {
@@ -45,7 +45,7 @@ const products = [
         name: 'Google Pixel 7 Pro',
         price: 23990000,
         oldPrice: 25990000,
-        image: 'https://images.unsplash.com/photo-1675885915738-1d0a102b26b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        image: 'https://sohanews.sohacdn.com/thumb_w/1000/160588918557773824/2023/1/14/photo-2-1673657681689188016985.jpg',
         description: 'Màn hình LTPO AMOLED 6.7 inch, chip Tensor G2, camera chính 50MP'
     }
 ];

@@ -20,6 +20,26 @@
                     <li><a href="#products">Sản phẩm</a></li>
                     <li><a href="#about">Giới thiệu</a></li>
                     <li><a href="#contact">Liên hệ</a></li>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <li class="user-menu">
+                            <a href="#" class="user-dropdown">
+                                <i class="fas fa-user"></i> <?php echo htmlspecialchars($_SESSION['username']); ?>
+                                <?php if ($_SESSION['is_admin']): ?>
+                                    <span class="admin-badge">Admin</span>
+                                <?php endif; ?>
+                            </a>
+                            <div class="dropdown-menu">
+                                <?php if ($_SESSION['is_admin']): ?>
+                                    <a href="admin/"><i class="fas fa-tachometer-alt"></i> Trang quản trị</a>
+                                <?php endif; ?>
+                                <a href="profile.php"><i class="fas fa-user"></i> Hồ sơ</a>
+                                <a href="?logout=1"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                            </div>
+                        </li>
+                    <?php else: ?>
+                        <li><a href="#" class="login-btn">Đăng nhập</a></li>
+                        <li><a href="#" class="register-btn">Đăng ký</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
             <div class="cart">
@@ -28,6 +48,83 @@
             </div>
         </div>
     </header>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Đăng nhập</h2>
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="alert alert-danger"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></div>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['success'])): ?>
+                <div class="alert alert-success"><?php echo $_SESSION['success']; unset($_SESSION['success']); ?></div>
+            <?php endif; ?>
+            <form action="auth.php" method="POST">
+                <div class="form-group">
+                    <label for="login-username">Tên đăng nhập hoặc Email:</label>
+                    <input type="text" id="login-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Mật khẩu:</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" name="login" class="btn btn-primary">Đăng nhập</button>
+                </div>
+                <div class="form-group text-center">
+                    <p>Chưa có tài khoản? <a href="#" class="switch-to-register">Đăng ký ngay</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Đăng ký tài khoản</h2>
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="alert alert-danger"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></div>
+            <?php endif; ?>
+            <form action="auth.php" method="POST">
+                <div class="form-group">
+                    <label for="reg-username">Tên đăng nhập:</label>
+                    <input type="text" id="reg-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Email:</label>
+                    <input type="email" id="reg-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Mật khẩu:</label>
+                    <input type="password" id="reg-password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-confirm-password">Xác nhận mật khẩu:</label>
+                    <input type="password" id="reg-confirm-password" name="confirm_password" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-fullname">Họ và tên:</label>
+                    <input type="text" id="reg-fullname" name="fullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-phone">Số điện thoại:</label>
+                    <input type="tel" id="reg-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-address">Địa chỉ:</label>
+                    <textarea id="reg-address" name="address" rows="2" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" name="register" class="btn btn-primary">Đăng ký</button>
+                </div>
+                <div class="form-group text-center">
+                    <p>Đã có tài khoản? <a href="#" class="switch-to-login">Đăng nhập ngay</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -80,7 +177,7 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Thông tin liên hệ</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận 1, TP.HCM</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Đường Minh Khai, Hai Bà Trưng, TP. Hà Nội</p>
                     <p><i class="fas fa-phone"></i> 0909 123 456</p>
                     <p><i class="fas fa-envelope"></i> info@techstore.vn</p>
                 </div>
@@ -101,7 +198,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>TechStore</h3>
-                    <p>Địa chỉ: 123 Đường ABC, Quận 1, TP.HCM</p>
+                    <p>Địa chỉ: 123 Đường Minh Khai, Hai Bà Trưng, TP. Hà Nội</p>
                     <p>Điện thoại: 0909 123 456</p>
                     <p>Email: info@techstore.vn</p>
                 </div>
@@ -131,5 +228,97 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Modal functionality
+        const loginModal = document.getElementById('loginModal');
+        const registerModal = document.getElementById('registerModal');
+        const loginBtn = document.querySelector('.login-btn');
+        const registerBtn = document.querySelector('.register-btn');
+        const switchToRegister = document.querySelector('.switch-to-register');
+        const switchToLogin = document.querySelector('.switch-to-login');
+        const closeBtns = document.querySelectorAll('.close');
+
+        // Show modals
+        if (loginBtn) {
+            loginBtn.onclick = function(e) {
+                e.preventDefault();
+                loginModal.style.display = 'block';
+            }
+        }
+
+        if (registerBtn) {
+            registerBtn.onclick = function(e) {
+                e.preventDefault();
+                registerModal.style.display = 'block';
+            }
+        }
+
+        // Switch between login and register
+        if (switchToRegister) {
+            switchToRegister.onclick = function(e) {
+                e.preventDefault();
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'block';
+            }
+        }
+
+        if (switchToLogin) {
+            switchToLogin.onclick = function(e) {
+                e.preventDefault();
+                registerModal.style.display = 'none';
+                loginModal.style.display = 'block';
+            }
+        }
+
+        // Close modals
+        closeBtns.forEach(btn => {
+            btn.onclick = function() {
+                loginModal.style.display = 'none';
+                registerModal.style.display = 'none';
+            }
+        });
+
+        // Close when clicking outside
+        window.onclick = function(event) {
+            if (event.target == loginModal) {
+                loginModal.style.display = 'none';
+            }
+            if (event.target == registerModal) {
+                registerModal.style.display = 'none';
+            }
+        }
+
+        // Show modals from URL parameters
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('login') === '1') {
+                loginModal.style.display = 'block';
+            } else if (urlParams.get('register') === '1') {
+                registerModal.style.display = 'block';
+            }
+        }
+
+        // User dropdown menu
+        const userDropdown = document.querySelector('.user-dropdown');
+        if (userDropdown) {
+            userDropdown.addEventListener('click', function(e) {
+                e.preventDefault();
+                const dropdownMenu = this.nextElementSibling;
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.matches('.user-dropdown')) {
+                    const dropdowns = document.querySelectorAll('.dropdown-menu');
+                    dropdowns.forEach(dropdown => {
+                        if (dropdown.style.display === 'block') {
+                            dropdown.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 </html>
