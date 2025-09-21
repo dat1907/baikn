@@ -236,7 +236,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password'])) {
                 <div class="footer-section">
                     <h3>Liên hệ</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Số 29A, ngõ 124 phố Vĩnh Tuy, quận Hai Bà Trưng, Hà Nội</p>
-                    <p><i class="fas fa-phone"></i> 0389917599</p>
+                    <p><i class="fas fa-phone"></i> 01689917599</p>
                     <p><i class="fas fa-envelope"></i> info@dattao.vn</p>
                 </div>
                 <div class="footer-section">
