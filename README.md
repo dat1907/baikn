@@ -1,7 +1,7 @@
-# TechStore - Hệ thống Điện thoại Di động
+# Đạt Táo - Hệ thống Điện thoại Di động
 
 ## Giới thiệu
-TechStore là một trang web bán điện thoại di động trực tuyến với đầy đủ các tính năng như đăng ký, đăng nhập, quản lý tài khoản và quản trị viên.
+Đạt Táo là một trang web bán điện thoại di động trực tuyến với đầy đủ các tính năng như đăng ký, đăng nhập, quản lý tài khoản và quản trị viên.
 
 ## Tính năng chính
 
@@ -28,7 +28,7 @@ TechStore là một trang web bán điện thoại di động trực tuyến v�
 ## Cài đặt
 
 1. **Cài đặt cơ sở dữ liệu**
-   - Tạo một cơ sở dữ liệu MySQL mới với tên `techstore_db`
+   - Tạo một cơ sở dữ liệu MySQL mới với tên `techstore_db` 
    - Import file SQL (nếu có) hoặc chạy script tạo bảng tự động
 
 2. **Cấu hình kết nối cơ sở dữ liệu**

@@ -1,0 +1,51 @@
+# XAMPP files
+.htaccess
+.htpasswd
+
+# Configuration files with sensitive data
+config/database.php
+*.env
+profile.php
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Dependency directories
+node_modules/
+vendor/
+
+# XAMPP specific
+xampp/
+
+# Cache
+cache/
+*.cache
+
+# Session files
+sessions/
+
+# Uploads directory
+uploads/
+
+# Local development files
+*.local
+
+# Backup files
+*.bak
+*.swp
+*~

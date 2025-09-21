@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ cá nhân - TechStore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Thêm một số style cần thiết */
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-success {
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+        .alert-danger {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #2e6da4;
+        }
+        .btn-primary:hover {
+            background-color: #286090;
+            border-color: #204d74;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>TechStore</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="index.html#products">Sản phẩm</a></li>
+                    <li><a href="index.html#about">Giới thiệu</a></li>
+                    <li><a href="index.html#contact">Liên hệ</a></li>
+                    <li class="user-menu">
+                        <a href="#" class="user-dropdown">
+                            <i class="fas fa-user"></i> Khách hàng
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="profile.html"><i class="fas fa-user"></i> Hồ sơ</a>
+                            <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-sidebar">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user-circle"></i>
+                        <h3>Khách hàng</h3>
+                        <p>example@email.com</p>
+                    </div>
+                    <ul class="profile-menu">
+                        <li><a href="#profile" class="active"><i class="fas fa-user"></i> Thông tin cá nhân</a></li>
+                        <li><a href="#password"><i class="fas fa-key"></i> Đổi mật khẩu</a></li>
+                        <li><a href="#orders"><i class="fas fa-shopping-bag"></i> Đơn hàng của tôi</a></li>
+                        <li><a href="#" id="logoutLink"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+                    </ul>
+                </div>
+                
+                <div class="profile-content">
+                    <!-- Profile Information -->
+                    <div id="profile" class="profile-section-content">
+                        <h2>Thông tin cá nhân</h2>
+                        <form id="profileForm" class="profile-form">
+                            <div class="form-group">
+                                <label for="fullname">Họ và tên</label>
+                                <input type="text" id="fullname" name="fullname" value="Khách hàng" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" value="example@email.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại</label>
+                                <input type="tel" id="phone" name="phone" value="0123456789">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Địa chỉ</label>
+                                <textarea id="address" name="address" rows="3">Số 29A, ngõ 124 phố Vĩnh Tuy, quận Hai Bà Trưng, Hà Nội</textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Cập nhật thông tin</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Change Password -->
+                    <div id="password" class="profile-section-content" style="display: none;">
+                        <h2>Đổi mật khẩu</h2>
+                        <form id="passwordForm" class="profile-form">
+                            <div class="form-group">
+                                <label for="current_password">Mật khẩu hiện tại</label>
+                                <input type="password" id="current_password" name="current_password" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="new_password">Mật khẩu mới</label>
+                                <input type="password" id="new_password" name="new_password" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirm_password">Xác nhận mật khẩu mới</label>
+                                <input type="password" id="confirm_password" name="confirm_password" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Orders -->
+                    <div id="orders" class="profile-section-content" style="display: none;">
+                        <h2>Đơn hàng của tôi</h2>
+                        <div class="no-orders">
+                            <i class="fas fa-shopping-bag"></i>
+                            <p>Bạn chưa có đơn hàng nào</p>
+                            <a href="index.html#products" class="btn btn-primary">Mua sắm ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Về chúng tôi</h3>
+                    <p>Đạt Táo tự hào là địa chỉ uy tín cung cấp các sản phẩm điện thoại chính hãng với giá cả cạnh tranh nhất thị trường.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Số 29A, ngõ 124 phố Vĩnh Tuy, quận Hai Bà Trưng, Hà Nội</p>
+                    <p><i class="fas fa-phone"></i> 0389917599</p>
+                    <p><i class="fas fa-envelope"></i> info@dattao.vn</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Kết nối với chúng tôi</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Đạt Táo. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show section based on URL hash
+            const hash = window.location.hash || '#profile';
+            showSection(hash);
+            
+            // Update active menu item
+            document.querySelectorAll('.profile-menu a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === hash) {
+                    link.classList.add('active');
+                }
+                
+                // Add click event to menu items
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('href');
+                    if (target === '#') return;
+                    
+                    if (target === '#logoutLink' || target === '#logoutBtn') {
+                        if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+                            window.location.href = 'index.html';
+                        }
+                        return;
+                    }
+                    
+                    window.location.hash = target;
+                    showSection(target);
+                    
+                    // Update active menu item
+                    document.querySelectorAll('.profile-menu a').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+            
+            // Show section function
+            function showSection(sectionId) {
+                if (sectionId === '#logoutLink' || sectionId === '#logoutBtn') return;
+                
+                // Hide all sections
+                document.querySelectorAll('.profile-section-content').forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Show target section
+                const targetSection = document.querySelector(sectionId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                }
+            }
+            
+            // Handle form submissions
+            document.getElementById('profileForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Tính năng này không khả dụng trong bản demo. Vui lòng đăng nhập để sử dụng đầy đủ tính năng.');
+            });
+            
+            document.getElementById('passwordForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Tính năng này không khả dụng trong bản demo. Vui lòng đăng nhập để sử dụng đầy đủ tính năng.');
+            });
+            
+            // Handle logout
+            document.getElementById('logoutBtn')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+                    window.location.href = 'index.html';
+                }
+            });
+            
+            document.getElementById('logoutLink')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (confirm('Bạn có chắc chắn muốn đăng xuất?')) {
+                    window.location.href = 'index.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
